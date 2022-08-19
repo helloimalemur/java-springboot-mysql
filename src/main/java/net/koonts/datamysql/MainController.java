@@ -20,12 +20,14 @@ public class MainController {
             , @RequestParam String email) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
-        //if (userRepository.) {}
-        Customer n = new Customer();
-        n.setFirstName(name);
-        n.setEmail(email);
-        customerRepository.save(n);
-        return "Saved";
+        if (!customerRepository.existsByEmail(email)) {
+            Customer n = new Customer();
+            n.setFirstName(name);
+            n.setEmail(email);
+            customerRepository.save(n);
+            return "Saved";
+        }
+        return "saved";
     }
 
     @GetMapping(path="/all")
