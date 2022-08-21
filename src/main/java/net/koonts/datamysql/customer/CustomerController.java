@@ -37,9 +37,4 @@ public class CustomerController {
         return customerRepository.findAll();
     }
 
-    @GetMapping(path="/showtickets")
-    public @ResponseBody Iterable<Ticket> getAllTickets() {
-        return ;
-    }
-
 }
