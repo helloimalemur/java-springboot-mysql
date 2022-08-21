@@ -11,5 +11,6 @@ public interface TicketRepository extends CrudRepository<Ticket, Integer> {
     List<Ticket> findByEmail(String email); //abstract methods -- see doc above
     Boolean existsByEmail(String ticketid);
     Boolean existsByTicketid(String ticketid);
+    Boolean existsByTicketsummary(String ticketsummary);
     Ticket findById(int ticketid);
 }

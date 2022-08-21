@@ -25,6 +25,9 @@ public class TicketController {
         t.setEmail(email);
         t.setTicketsummary(summary);
         t.setTicketfull(fulldesc);
+        if (ticketRepository.existsByTicketsummary(summary)) {
+            return "Already exists";
+        }
         ticketRepository.save(t);
         //if (!customerRepository.existsByEmail(email)) {
         //    Customer n = new Customer();
@@ -33,14 +36,14 @@ public class TicketController {
         //    customerRepository.save(n);
         //    return "Saved";
         //}
-        return "saved";
+        return "Saved";
     }
 
-    @GetMapping(path="/all")
+    @PostMapping(path="/all")
     public @ResponseBody Iterable<Ticket> getAllTickets(@RequestParam String email) {
         // This returns a JSON or XML with the users
         if (ticketRepository.existsByEmail(email)) {
-            ticketRepository.findByEmail(email);
+            return ticketRepository.findByEmail(email);
         }
         return null;
     }
