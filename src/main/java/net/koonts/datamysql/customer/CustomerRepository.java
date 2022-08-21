@@ -1,4 +1,4 @@
-package net.koonts.datamysql;
+package net.koonts.datamysql.customer;
 
 //https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html
 //Example 1.4. Query creation from method names

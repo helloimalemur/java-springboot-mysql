@@ -1,4 +1,4 @@
-package net.koonts.datamysql;
+package net.koonts.datamysql.customer;
 
 import javax.persistence.*;
 

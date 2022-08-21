@@ -1,5 +1,5 @@
 package net.koonts.datamysql;
-
+//https://docs.spring.io/spring-boot/docs/current
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

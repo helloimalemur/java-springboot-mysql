@@ -1,7 +1,5 @@
 package net.koonts.datamysql.customer;
 
-import net.koonts.datamysql.Customer;
-import net.koonts.datamysql.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
