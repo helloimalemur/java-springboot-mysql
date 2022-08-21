@@ -9,6 +9,7 @@ import java.util.List;
 public interface TicketRepository extends CrudRepository<Ticket, Integer> {
 
     List<Ticket> findByEmail(String email); //abstract methods -- see doc above
+    List<Ticket> listAll();
     Boolean existsByEmail(String ticketid);
     Boolean existsByTicketid(String ticketid);
     Boolean existsByTicketsummary(String ticketsummary);

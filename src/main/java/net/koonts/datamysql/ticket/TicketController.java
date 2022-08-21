@@ -36,9 +36,16 @@ public class TicketController {
     @PostMapping(path="/all")
     public @ResponseBody Iterable<Ticket> getAllTickets(@RequestParam String email) {
         // This returns a JSON or XML with the users
+        return ticketRepository.listAll();
+    }
+
+    @PostMapping(path="/byemail")
+    public @ResponseBody Iterable<Ticket> getAllByEmail(@RequestParam String email) {
+        // This returns a JSON or XML with the users
         if (ticketRepository.existsByEmail(email)) {
             return ticketRepository.findByEmail(email);
         }
         return null;
     }
+
 }

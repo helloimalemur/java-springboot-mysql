@@ -1,5 +1,6 @@
 package net.koonts.datamysql.customer;
 
+import net.koonts.datamysql.ticket.Ticket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,4 +36,10 @@ public class CustomerController {
         // This returns a JSON or XML with the users
         return customerRepository.findAll();
     }
+
+    @GetMapping(path="/showtickets")
+    public @ResponseBody Iterable<Ticket> getAllTickets() {
+        return ;
+    }
+
 }
