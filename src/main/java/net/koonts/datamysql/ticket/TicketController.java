@@ -29,13 +29,7 @@ public class TicketController {
             return "Already exists";
         }
         ticketRepository.save(t);
-        //if (!customerRepository.existsByEmail(email)) {
-        //    Customer n = new Customer();
-        //    n.setFirstName(name);
-        //    n.setEmail(email);
-        //    customerRepository.save(n);
-        //    return "Saved";
-        //}
+
         return "Saved";
     }
 
