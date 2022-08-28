@@ -18,13 +18,13 @@ public class TicketController {
 
     @PostMapping(path="/ticket/add") // Map ONLY POST Requests
     public @ResponseBody String addNewTicket (@RequestParam String email
-            , @RequestParam String summary, @RequestParam String fulldesc) {
+            , @RequestParam String summary, @RequestParam String type) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         Ticket t = new Ticket();
         t.setEmail(email);
         t.setTicketsummary(summary);
-        t.setTicketfull(fulldesc);
+        t.setTicketfull(type);
         if (ticketRepository.existsByTicketsummary(summary)) {
             return "Already exists";
         }
