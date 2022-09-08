@@ -38,19 +38,19 @@ public class TicketController {
         return "Saved";
     }
 
-    @GetMapping(path="/ticket/all")
-    public @ResponseBody Iterable<Ticket> getAllTickets() {
-        // This returns a JSON or XML with the users
-        return ticketRepository.findAll();
-    }
+    //@GetMapping(path="/ticket/all")
+    //public @ResponseBody Iterable<Ticket> getAllTickets() {
+    //    // This returns a JSON or XML with the users
+    //    return ticketRepository.findAll();
+    //}
 
-    @PostMapping(path="/ticket/email")
-    public @ResponseBody Iterable<Ticket> getByEmail(@RequestParam String email) {
-        // This returns a JSON or XML with the tickets
-        if (ticketRepository.existsByEmail(email)) {
-            return ticketRepository.findByEmail(email);
-        }
-        return null;
-    }
+    //@PostMapping(path="/ticket/email")
+    //public @ResponseBody Iterable<Ticket> getByEmail(@RequestParam String email) {
+    //    // This returns a JSON or XML with the tickets
+    //    if (ticketRepository.existsByEmail(email)) {
+    //        return ticketRepository.findByEmail(email);
+    //    }
+    //    return null;
+    //}
 
 }
