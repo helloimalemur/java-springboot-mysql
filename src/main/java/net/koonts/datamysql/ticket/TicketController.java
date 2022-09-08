@@ -22,8 +22,11 @@ public class TicketController {
         // @RequestParam means it is a parameter from the GET or POST request
         Ticket t = new Ticket();
         t.setTicketname(name);
+        System.out.println(name);
         t.setEmail(email);
+        System.out.println(email);
         t.setTicketMessage(message);
+        System.out.println(message);
 
         if (ticketRepository.existsByFullmessage(message)) {
             return "Already exists";
