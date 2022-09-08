@@ -11,10 +11,10 @@ public class Ticket {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
 
     private int ticketid;
-    private String ticketsummary;
+    private String fullmessage;
     private String email;
     private int phone;
-    private String ticketfull;
+    private String fullname;
 
     public int getTicketid() {
         return ticketid;
@@ -24,18 +24,18 @@ public class Ticket {
         this.ticketid = ticketid;
     }
 
-    public void setTicketsummary(String ticketsummary) {
-        this.ticketsummary = ticketsummary;
+    public void setTicketMessage(String ticketsummary) {
+        this.fullmessage = ticketsummary;
     }
-    public String getTicketsummary() {
-        return this.ticketsummary;
+    public String getFullmessage() {
+        return this.fullmessage;
     }
 
-    public void setTicketfull(String ticketfull) {
-        this.ticketfull = ticketfull;
+    public void setTicketname(String ticketfull) {
+        this.fullname = ticketfull;
     }
-    public String getTicketfull() {
-        return this.ticketfull;
+    public String getFullname() {
+        return this.fullname;
     }
 
     public void setEmail(String email) {
