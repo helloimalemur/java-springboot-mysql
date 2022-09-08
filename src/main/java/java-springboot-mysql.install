@@ -1,0 +1,50 @@
+# This is a default template for a post-install scriptlet.
+# Uncomment only required functions and remove any functions
+# you don't need (and this header).
+
+## arg 1:  the new package version
+## create user for service to run under, and install pip dependancies for eg;
+pre_install() {
+    useradd spring -m
+    su -c 'pip install aiohttp pymyq requests asyncio pyyaml' spring
+}
+
+## arg 1:  the new package version
+#set permissions on runtime files and reload linux systemd for new config file (set in place by PKGBUILD) and enable/start java-springboot-mysql.service
+post_install() {
+    chmod 755 /usr/share/java-springboot-mysql/*
+    systemctl daemon-reload
+	systemctl enable java-springboot-mysql
+	systemctl start java-springboot-mysql
+}
+
+## arg 1:  the new package version
+## arg 2:  the old package version
+#stop service when upgrading or uninstalling
+pre_upgrade() {
+	systemctl stop java-springboot-mysql
+}
+
+## arg 1:  the new package version
+## arg 2:  the old package version
+#start service when done upgrading or uninstalling
+post_upgrade() {
+	systemctl start java-springboot-mysql
+	chmod 755 /usr/share/java-springboot-mysql/*
+}
+
+## arg 1:  the old package version
+#stop and disable service when uninstalling
+pre_remove() {
+  systemctl disable java-springboot-mysql
+	systemctl stop java-springboot-mysql
+}
+
+## arg 1:  the old package version
+#clean up config and runtime files set in place by PKGBUILD and delete user
+post_remove() {
+	rm -rf /etc/systemd/system/java-springboot-mysql.service
+	rm -rf /usr/share/java-springboot-mysql
+	userdel spring
+	rm -rf /home/spring
+}

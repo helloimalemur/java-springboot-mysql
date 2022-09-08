@@ -1,0 +1,47 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=java-springboot-mysql
+pkgver=1
+pkgrel=1
+pkgdesc="java-springboot-mysql"
+arch=(any)
+url=""
+license=('GPL')
+depends=(jdk-openjdk) ##Arch dependencies
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+noextract=()
+md5sums=()
+validpgpkeys=()
+rootdir=$(pwd)
+
+#prepare() {
+#}
+
+#build() {
+#}
+
+#check() {
+#}
+
+##package would be named "example-package"
+package_java-springboot-mysql-package() {
+    install=java-springboot-mysql.install
+    cp -a "$rootdir/config/"* "$pkgdir"
+
+    #copy resulting distributions from gradle build
+    mv "$rootdir/../../../build/distributions/"*.tar "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar"
+    tar xvf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar" -C "$pkgdir/usr/share/java-springboot-mysql/"
+    mv "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"* "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql/"
+
+    ###app runs as it was previously configured otherwise
+    rm -rf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"
+    chmod +x "$pkgdir/usr/share/java-springboot-mysql/start.sh"
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Java Springboot MySQL
+After=network.target
+StartLimitInterval=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=spring
+ExecStart=/usr/share/java-springboot-mysql/start.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
