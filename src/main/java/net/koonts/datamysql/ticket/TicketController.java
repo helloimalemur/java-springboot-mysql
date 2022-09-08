@@ -27,10 +27,12 @@ public class TicketController {
         System.out.println(email);
         t.setTicketMessage(message);
         System.out.println(message);
-
-        if (ticketRepository.existsByFullmessage(message)) {
-            return "Already exists";
+        if (ticketRepository.existsByEmail(email)) {
+            if (ticketRepository.existsByFullmessage(message)) {
+                return "Already exists";
+            }
         }
+
         ticketRepository.save(t);
 
         return "Saved";
