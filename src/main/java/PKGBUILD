@@ -38,7 +38,7 @@ package_java-springboot-mysql() {
 
     #copy resulting distributions from gradle build
     mv "$rootdir/../../../build/distributions/data-mysql-boot"*.tar "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar"
-    tar xvf "$pkgdir/usr/share/java-springboot-mysql/data-mysql-boot"*.tar -C "$pkgdir/usr/share/java-springboot-mysql/"
+    tar xvf "$pkgdir/usr/share/java-springboot-mysql/*.tar" -C "$pkgdir/usr/share/java-springboot-mysql/"
     #mv "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"* "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql/"
 
     ###app runs as it was previously configured otherwise
