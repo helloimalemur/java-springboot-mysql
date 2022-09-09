@@ -37,7 +37,7 @@ post_upgrade() {
 #stop and disable service when uninstalling
 pre_remove() {
   systemctl disable java-springboot-mysql
-	systemctl stop java-springboot-mysql
+  systemctl stop java-springboot-mysql
 }
 
 ## arg 1:  the old package version
