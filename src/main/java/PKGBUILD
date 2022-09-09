@@ -11,7 +11,7 @@ pkgdesc="java-springboot-mysql"
 arch=(any)
 url=""
 license=('GPL')
-depends=(jdk-openjdk) ##Arch dependencies
+depends=(git jdk-openjdk) ##Arch dependencies
 provides=()
 conflicts=()
 replaces=()
@@ -37,11 +37,11 @@ package_java-springboot-mysql() {
     cp -a "$rootdir/config/"* "$pkgdir"
 
     #copy resulting distributions from gradle build
-    mv "$rootdir/../../../build/distributions/data-mysql-boot"*.tar "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar"
-    tar xvf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar" -C "$pkgdir/usr/share/java-springboot-mysql/"
-    mv "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"* "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql/"
+    #mv "$rootdir/../../../build/distributions/data-mysql-boot"*.tar "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar"
+    #tar xvf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql.tar" -C "$pkgdir/usr/share/java-springboot-mysql/"
+    #mv "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"* "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql/"
 
     ###app runs as it was previously configured otherwise
-    rm -rf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"
-    chmod +x "$pkgdir/usr/share/java-springboot-mysql/start.sh"
+    #rm -rf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"
+    #chmod +x "$pkgdir/usr/share/java-springboot-mysql/start.sh"
 }
