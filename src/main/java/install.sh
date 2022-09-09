@@ -6,7 +6,7 @@ sudo systemctl stop java-springboot-mysql
 mkdir ~/.java-springboot-mysql
 cp /usr/share/java-springboot-mysql/java-springboot-mysql.config ~/.java-springboot-mysql/
 ##removing
-sudo pacman -R java-springboot-mysql-package --noconfirm # set in PKGBUILD
+sudo pacman -R java-springboot-mysql --noconfirm # set in PKGBUILD
 ##reinstalling
 rm -rf ~/java-springboot-mysql/
 cd ~
