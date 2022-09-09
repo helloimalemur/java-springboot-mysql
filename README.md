@@ -1,4 +1,4 @@
-# data-mysql
+# java-springboot-mysql
 Java / Spring Boot MySQL database connection example
 intended to be used with Docker MySQL instance
 
