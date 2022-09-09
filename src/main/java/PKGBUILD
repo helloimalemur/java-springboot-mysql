@@ -42,7 +42,7 @@ package_java-springboot-mysql() {
     mv "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql/"* "$pkgdir/usr/share/java-springboot-mysql/"
 
     ###app runs as it was previously configured otherwise
-    rm -rf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql"
+    rm -rf "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql/"
     rm "$pkgdir/usr/share/java-springboot-mysql/java-springboot-mysql-boot.tar"
     chmod +x "$pkgdir/usr/share/java-springboot-mysql/start.sh"
 }
