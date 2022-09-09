@@ -12,6 +12,7 @@ pre_install() {
 ## arg 1:  the new package version
 #set permissions on runtime files and reload linux systemd for new config file (set in place by PKGBUILD) and enable/start java-springboot-mysql.service
 post_install() {
+    mkdir /usr/share/java-springboot-mysql/
     chmod 755 /usr/share/java-springboot-mysql/*
     systemctl daemon-reload
 	systemctl enable java-springboot-mysql

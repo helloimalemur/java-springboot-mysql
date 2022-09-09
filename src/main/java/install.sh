@@ -18,6 +18,7 @@ makepkg -si --noconfirm
 sudo systemctl stop java-springboot-mysql
 ##if configs had already exist they should be in home dir already
 cd ~
+sudo mkdir /usr/share/java-springboot-mysql/
 sudo cp ~/.java-springboot-mysql/* /usr/share/java-springboot-mysql/
 sudo chmod 755 /usr/share/java-springboot-mysql/*
 sudo systemctl daemon-reload
