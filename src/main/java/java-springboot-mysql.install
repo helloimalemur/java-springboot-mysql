@@ -6,7 +6,7 @@
 ## create user for service to run under, and install pip dependancies for eg;
 pre_install() {
     useradd spring -m
-    su -c 'pip install aiohttp pymyq requests asyncio pyyaml' spring
+    su -c 'echo' spring
 }
 
 ## arg 1:  the new package version
