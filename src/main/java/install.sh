@@ -1,6 +1,6 @@
 #!/bin/bash
 ##removes if already installed
-sudo systemctl reload-daemon
+sudo systemctl daemon-reload
 sudo systemctl stop java-springboot-mysql
 ##if configs already exist back them up to ~/.java-springboot-mysql
 mkdir ~/.java-springboot-mysql
@@ -20,7 +20,7 @@ sudo systemctl stop java-springboot-mysql
 cd ~
 sudo cp ~/.java-springboot-mysql/* /usr/share/java-springboot-mysql/
 sudo chmod 755 /usr/share/java-springboot-mysql/*
-sudo systemctl reload-daemon
+sudo systemctl daemon-reload
 sudo systemctl start java-springboot-mysql
 sudo systemctl status java-springboot-mysql
 

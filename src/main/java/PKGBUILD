@@ -32,7 +32,7 @@ rootdir=$(pwd)
 #}
 
 ##package would be named "example-package"
-package_java-springboot-mysql-package() {
+package_java-springboot-mysql() {
     install=java-springboot-mysql.install
     cp -a "$rootdir/config/"* "$pkgdir"
 
