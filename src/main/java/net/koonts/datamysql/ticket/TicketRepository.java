@@ -14,4 +14,5 @@ public interface TicketRepository extends CrudRepository<Ticket, Integer> {
     Boolean existsByTicketid(String ticketid);
     Boolean existsByFullmessage(String fullmessage);
     Ticket findById(int ticketid);
+    Iterable<Ticket> getAllByFullmessageIsNotNull();
 }

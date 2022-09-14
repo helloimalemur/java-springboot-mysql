@@ -40,8 +40,8 @@ public class TicketController {
 
     @GetMapping(path="/ticket/all")
     public @ResponseBody Iterable<Ticket> getAllTickets() {
-        // This returns a JSON or XML with the users
-        return ticketRepository.findAll();
+        // This returns a JSON or XML with the tickets
+        return ticketRepository.getAllByFullmessageIsNotNull();
     }
 
     //@PostMapping(path="/ticket/email")
