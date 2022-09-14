@@ -38,11 +38,11 @@ public class TicketController {
         return "Saved";
     }
 
-    //@GetMapping(path="/ticket/all")
-    //public @ResponseBody Iterable<Ticket> getAllTickets() {
-    //    // This returns a JSON or XML with the users
-    //    return ticketRepository.findAll();
-    //}
+    @GetMapping(path="/ticket/all")
+    public @ResponseBody Iterable<Ticket> getAllTickets() {
+        // This returns a JSON or XML with the users
+        return ticketRepository.findAll();
+    }
 
     //@PostMapping(path="/ticket/email")
     //public @ResponseBody Iterable<Ticket> getByEmail(@RequestParam String email) {
