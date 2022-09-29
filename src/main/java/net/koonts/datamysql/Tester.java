@@ -14,7 +14,7 @@ public class Tester {
         //try {
         //    Driver dr = (Driver) Class.forName("com.mysql.jdbc.Driver").newInstance();
         //    DriverManager.registerDriver(dr);
-        //    Connection con = dr.connect("jdbc:mysql://localhost/customer?" + "user=root&password=4d23c0fa30");
+        //    Connection con = dr.connect("jdbc:mysql://localhost/customer?" + "");
         //} catch (Exception ex) {}
 
         //String url = "jdbc:mysql://localhost:3306/customer";
