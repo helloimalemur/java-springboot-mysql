@@ -18,7 +18,7 @@ public class Tester {
         //} catch (Exception ex) {}
 
         //String url = "jdbc:mysql://localhost:3306/customer";
-        //Connection c = .getConnection("jdbc:mysql://localhost/customer?" + "user=root&password=4d23c0fa30");
+        //Connection c = .getConnection("jdbc:mysql://localhost/customer?" + "");
         System.out.println("test");
         System.out.println("test");
 
