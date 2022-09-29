@@ -1,6 +1,7 @@
 # java-springboot-mysql
 Java / Spring Boot MySQL database connection example
-intended to be used with Docker MySQL instance
+
+Used with Docker MySQL instance for <a href="http://koonts.net">Koonts.net</a>
 
 1. Use Gradle to run/build
 2. Pulls application.properties from ~/.java-springboot-mysql/application.properties
